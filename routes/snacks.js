@@ -9,12 +9,11 @@ module.exports = function (server, CONFIG) {
   server.route({
     method: "GET",
     path: "/",
-
     config: {
       cors: true,
       auth: false,
     },
-    handler: function () {
+    handler: function (_request, _h) {
       return "hello world";
     },
   });
@@ -41,7 +40,7 @@ module.exports = function (server, CONFIG) {
         ),
       },
     },
-    handler: function (request, h) {
+    handler: function (_request, _h) {
       return snacks;
     },
   });
@@ -56,7 +55,7 @@ module.exports = function (server, CONFIG) {
       notes:
         "Per-user vote count restriction is not implemented.  NAT candidates are resopnsible for handling this.",
       pre: [
-        function (request, h) {
+        function (request, _h) {
           var id = request.params.snackId;
           var snack = findWhere(snacks, { id: id });
           if (!snack) return Boom.badData("Snack ID not recognized");
@@ -73,7 +72,7 @@ module.exports = function (server, CONFIG) {
         },
       },
     },
-    handler: function (request, h) {
+    handler: function (request, _h) {
       var id = request.params.snackId;
       var snack = findWhere(snacks, { id: id });
       request.snack.votes++;
