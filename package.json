@@ -9,6 +9,7 @@
   },
   "author": "The Nerdery",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "hapi": "^17.5.3",
     "hapi-auth-bearer-token": "^6.0.1",
     "inert": "^5.1.0",
