@@ -25,6 +25,7 @@ const init = async () => {
   require("./routes/images")(server, CONFIG);
 
   await server.start();
+
   console.log(`Server running at ${server.info.uri}`);
 };
 
