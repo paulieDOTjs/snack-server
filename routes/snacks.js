@@ -8,6 +8,17 @@ module.exports = function (server, CONFIG) {
 
   server.route({
     method: "GET",
+    path: "/",
+    config: {
+      cors: true,
+    },
+    handler: function () {
+      return "hello world";
+    },
+  });
+
+  server.route({
+    method: "GET",
     path: "/snacks",
     config: {
       cors: true,
