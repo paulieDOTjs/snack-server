@@ -9,8 +9,10 @@ module.exports = function (server, CONFIG) {
   server.route({
     method: "GET",
     path: "/",
+
     config: {
       cors: true,
+      auth: false,
     },
     handler: function () {
       return "hello world";
