@@ -14,7 +14,7 @@ module.exports = function (server, CONFIG) {
       auth: false,
     },
     handler: function (_request, _h) {
-      return { messsage: "hello world" };
+      return { message: "hello world" };
     },
   });
 
